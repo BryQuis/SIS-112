@@ -1,0 +1,14 @@
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\bin\Debug\net8.0\Progaramando en VSC.exe
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\bin\Debug\net8.0\Progaramando en VSC.deps.json
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\bin\Debug\net8.0\Progaramando en VSC.runtimeconfig.json
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\bin\Debug\net8.0\Progaramando en VSC.dll
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\bin\Debug\net8.0\Progaramando en VSC.pdb
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\Progaramando en VSC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\Progaramando en VSC.AssemblyInfoInputs.cache
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\Progaramando en VSC.AssemblyInfo.cs
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\Progaramando en VSC.csproj.CoreCompileInputs.cache
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\Progaramando en VSC.dll
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\refint\Progaramando en VSC.dll
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\Progaramando en VSC.pdb
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\Progaramando en VSC.genruntimeconfig.cache
+C:\Users\UCB\Documents\Bryan\Progaramando en VSC\obj\Debug\net8.0\ref\Progaramando en VSC.dll
