@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Progaramando en VSC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1848dbb0ec243381790e9bde99d3f7e9d0ac894c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2442b91ee92773e66ca330bab6c1b4de30f016a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Progaramando en VSC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Progaramando en VSC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
