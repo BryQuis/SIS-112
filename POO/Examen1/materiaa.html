@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Materias</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Gestión de Materias</h1>
+
+        <!-- Contenedor de botones de materias -->
+        <div id="botonesMaterias" class="mb-3">
+            <!-- Los botones de materias serán añadidos dinámicamente desde el script -->
+        </div>
+
+        <!-- Información de la materia -->
+        <div class="card mb-3">
+            <div class="card-header">
+                Información de la Materia
+            </div>
+            <div class="card-body">
+                <h5 id="NombreMateria" class="card-title"></h5>
+                <p id="Sigla" class="card-text"></p>
+                <p id="Docente" class="card-text"></p>
+                <p id="Horarios" class="card-text"></p>
+                <p id="Aula" class="card-text"></p>
+                <p id="Prerequisito" class="card-text"></p>
+                <p id="Carrera" class="card-text"></p>
+                <p id="Universidad" class="card-text"></p>
+                <p id="CantidadInscrito" class="card-text"></p>
+                <p id="Modalidad" class="card-text"></p>
+                <p id="CalificacionMinima" class="card-text"></p>
+                <p id="Temas" class="card-text"></p>
+                <p id="Ubicacion" class="card-text"></p>
+            </div>
+        </div>
+
+        <!-- Botones para modificar y eliminar -->
+        <div class="mb-3">
+            <button class="btn btn-primary" id="modificarBtn">Modificar Materia</button>
+            <button class="btn btn-danger" id="eliminarBtn">Eliminar Materia</button>
+        </div>
+
+    </div>
+
+    <!-- Importar Bootstrap JS y el archivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="materiaa.js"></script>
+
+    <script>
+        // Materias cargadas desde el archivo JavaScript
+        const botonesMaterias = document.getElementById('botonesMaterias');
+        let materiaSeleccionada = null;
+
+        // Crear botones de materias dinámicamente
+        materias.forEach((materia, index) => {
+            const button = document.createElement('button');
+            button.textContent = materia.nombremateria;
+            button.classList.add('btn', 'btn-secondary', 'm-2');
+            button.onclick = () => mostrarMateria(index);
+            botonesMaterias.appendChild(button);
+        });
+
+        // Mostrar la información de la materia seleccionada
+        function mostrarMateria(index) {
+            const materia = materias[index];
+            materiaSeleccionada = index;
+
+            document.getElementById('NombreMateria').textContent = materia.NombreMateria();
+            document.getElementById('Sigla').textContent = materia.Sigla();
+            document.getElementById('Docente').textContent = materia.Docente();
+            document.getElementById('Horarios').textContent = materia.Horarios();
+            document.getElementById('Aula').textContent = materia.Aula();
+            document.getElementById('Prerequisito').textContent = materia.Prerequisito();
+            document.getElementById('Carrera').textContent = materia.Carrera();
+            document.getElementById('Universidad').textContent = materia.Universidad();
+            document.getElementById('CantidadInscrito').textContent = materia.CantidadInscrito();
+            document.getElementById('Modalidad').textContent = materia.Modalidad();
+            document.getElementById('CalificacionMinima').textContent = materia.CalificacionMinima();
+            document.getElementById('Temas').textContent = materia.Temas();
+            document.getElementById('Ubicacion').textContent = materia.Ubicacion();
+        }
+
+        // Modificar la materia seleccionada
+        document.getElementById('modificarBtn').onclick = () => {
+            if (materiaSeleccionada !== null) {
+                const materia = materias[materiaSeleccionada];
+                materia.modificar_NombreMateria();
+                materia.modificar_Sigla();
+                materia.modificar_Docente();
+                materia.modificar_Horarios();
+                materia.modificar_Aula();
+                materia.modificar_Prerequisito();
+                materia.modificar_Carrera();
+                materia.modificar_Universidad();
+                materia.modificar_CantidadInscrito();
+                materia.modificar_modalidad();
+                materia.modificar_CalificacionMinima();
+                materia.modificar_temas();
+                materia.modificar_ubicacion();
+                mostrarMateria(materiaSeleccionada);
+            } else {
+                alert("Por favor, seleccione una materia para modificar.");
+            }
+        };
+
+        // Eliminar la materia seleccionada
+        document.getElementById('eliminarBtn').onclick = () => {
+            if (materiaSeleccionada !== null) {
+                materias.splice(materiaSeleccionada, 1);
+                botonesMaterias.removeChild(botonesMaterias.children[materiaSeleccionada]);
+                materiaSeleccionada = null;
+                limpiarMostrar();
+            } else {
+                alert("Por favor, seleccione una materia para eliminar.");
+            }
+        };
+
+        // Limpiar la sección de mostrar materia
+        function limpiarMostrar() {
+            document.getElementById('NombreMateria').textContent = '';
+            document.getElementById('Sigla').textContent = '';
+            document.getElementById('Docente').textContent = '';
+            document.getElementById('Horarios').textContent = '';
+            document.getElementById('Aula').textContent = '';
+            document.getElementById('Prerequisito').textContent = '';
+            document.getElementById('Carrera').textContent = '';
+            document.getElementById('Universidad').textContent = '';
+            document.getElementById('CantidadInscrito').textContent = '';
+            document.getElementById('Modalidad').textContent = '';
+            document.getElementById('CalificacionMinima').textContent = '';
+            document.getElementById('Temas').textContent = '';
+            document.getElementById('Ubicacion').textContent = '';
+        }
+    </script>
+</body>
+</html>
+
