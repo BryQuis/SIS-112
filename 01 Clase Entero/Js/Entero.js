@@ -8,7 +8,7 @@ class Entero {
     //CLASS - Cargar el valor de Num
     setNum(){
         const input = document.getElementById("numeroInput");
-        this.Num = parseInt(input.ariaValueMax, 10);
+        this.Num = parseInt(input.value, 10);
     }
     //CLASS - Obtener el valor de Num
     getNum() {
@@ -20,12 +20,28 @@ class Entero {
         resultadoDiv.textContent = this.getNum();
     }
 
+    showResultado(respuesta){
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.textContent = respuesta;
+    }
+
     IncrementarNum(){
         this.Num =this.Num + 1;
     }
     DecrementarNum(){
         this.Num =this.Num - 1;
     }
+
+    esParImpar(){
+        return (this.Num % 2 ==0)
+    }
+    esPositivoNegativo() { 
+        if (this.Num > 0) { return "Es positivo"; } else if (this.Num < 0) { 
+            return "Es negativo"; 
+        } else { 
+            return "Es cero"; 
+        } 
+    } 
 }
 
 //Las funciones = button HTML
@@ -49,4 +65,15 @@ function IncrementarValor(){
 function DecrementarValor(){
     ClaseEntero.DecrementarNum();
     ClaseEntero.showNum();
+}
+//verfifica si es par o impar
+function esParImparNum(){
+    var respuesta = ClaseEntero.esParImpar();
+    var resp = respuesta ? "El numero es Par" : "El numero es impar";
+    ClaseEntero.showResultado(resp);
+}
+//Verificar si es postivo y negativo
+function esPositivoNegativoNum() {
+    var respuesta = ClaseEntero.esPositivoNegativo();
+    ClaseEntero.showResultado(respuesta);
 }
