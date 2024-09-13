@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Adornada</title>
+    <title>Clase entero</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -59,40 +59,54 @@
         }
     </style>
 </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Número Entero</title>
+    <!-- Incluir Bootstrap CSS desde un CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos adicionales opcionales -->
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .btn-custom {
+            margin: 5px;
+        }
+    </style>
+</head>
 <body>
+    <div class="container">
+        <h1 class="text-center">Operaciones con Número Entero</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Input para número entero -->
+                <div class="form-group">
+                    <label for="numeroInput">Introduce un número entero:</label>
+                    <input type="number" class="form-control" id="numeroInput" placeholder="Número entero" value="0">
+                </div>
+                <!-- Botones para llamar a funciones -->
+                <button class="btn btn-primary btn-custom" onclick="cargarNum()">CARGAR NUM ENTERO</button>
+                <br>
+                <button class="btn btn-secondary btn-custom" onclick="mostrarNum()">MOSTRAR ENTERO</button>
+                <br>
+                
+                <button class="btn btn-success btn-custom" onclick="IncrementarValor()">(+)</button>
+                <button class="btn btn-danger btn-custom" onclick="DecrementarValor()">(-)</button>
 
-    <div class="calculator">
-        <h1>Calculadora</h1>
-
-        <input type="number" id="num1" placeholder="Número 1">
-        <input type="number" id="num2" placeholder="Número 2"><br>
-
-        <button class="suma" onclick="sumar()">Sumar</button>
-        <button class="resta" onclick="restar()">Restar</button>
-        <button class="multiplicacion" onclick="multiplicar()">Multiplicar</button>
-        <button class="division" onclick="dividir()">Dividir</button>
-
-        <div id="result"></div>
+                <h3>RESULTADO</h3>
+                <div id="resultado" class="mt-3"></div>
+            </div>
+        </div>
     </div>
 
-    <script>
-        // Aquí puedes agregar tus métodos en JavaScript.
-        function sumar() {
-            // Método de suma aquí
-        }
-
-        function restar() {
-            // Método de resta aquí
-        }
-
-        function multiplicar() {
-            // Método de multiplicación aquí
-        }
-
-        function dividir() {
-            // Método de división aquí
-        }
-    </script>
-
+    <!-- Incluir jQuery y Bootstrap JS desde un CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Incluir el archivo JavaScript -->
+    <script src="Entero.js"></script>
 </body>
 </html>
