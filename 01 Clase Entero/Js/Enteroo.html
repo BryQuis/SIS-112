@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Adornada</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 80%;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.suma { background-color: #4CAF50; color: white; }
+        button.resta { background-color: #FF5722; color: white; }
+        button.multiplicacion { background-color: #FFC107; color: white; }
+        button.division { background-color: #2196F3; color: white; }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>Calculadora</h1>
+
+        <input type="number" id="num1" placeholder="Número 1">
+        <input type="number" id="num2" placeholder="Número 2"><br>
+
+        <button class="suma" onclick="sumar()">Sumar</button>
+        <button class="resta" onclick="restar()">Restar</button>
+        <button class="multiplicacion" onclick="multiplicar()">Multiplicar</button>
+        <button class="division" onclick="dividir()">Dividir</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Aquí puedes agregar tus métodos en JavaScript.
+        function sumar() {
+            // Método de suma aquí
+        }
+
+        function restar() {
+            // Método de resta aquí
+        }
+
+        function multiplicar() {
+            // Método de multiplicación aquí
+        }
+
+        function dividir() {
+            // Método de división aquí
+        }
+    </script>
+
+</body>
+</html>
