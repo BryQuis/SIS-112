@@ -60,6 +60,17 @@ class Entero {
         }
         return factorial;
     }
+    esPrimo(){
+        if (this.Num < 2) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(this.Num); i++) {
+            if (this.Num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 //Las funciones = button HTML
@@ -105,4 +116,10 @@ function esPerfectoNum(){
 function factorialNum(){
     var respuesta = ClaseEntero.factorial();
     ClaseEntero.showResultado(respuesta);
+}
+function esPrimoo(){
+    var respuesta = ClaseEntero.esPrimo();
+    var resp = respuesta? "El numero es Primo" : "El numero no es Primo";
+    ClaseEntero.showResultado(resp);
+ 
 }
