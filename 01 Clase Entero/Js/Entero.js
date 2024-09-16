@@ -42,6 +42,24 @@ class Entero {
             return "Es cero"; 
         } 
     } 
+
+    esPerfecto (){
+        var suma = 0;
+        for (let i = 1; i < this.Num; i++) {
+            if (this.Num % i == 0) {
+                suma += i;
+            }
+        }
+        return suma === this.Num;
+    }
+
+    factorial(){
+        var factorial = 1;
+        for (let i = 1; i <= this.Num; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
 }
 
 //Las funciones = button HTML
@@ -75,5 +93,16 @@ function esParImparNum(){
 //Verificar si es postivo y negativo
 function esPositivoNegativoNum() {
     var respuesta = ClaseEntero.esPositivoNegativo();
+    ClaseEntero.showResultado(respuesta);
+}
+function esPerfectoNum(){
+    var respuesta = ClaseEntero.esPerfecto();
+    var resp = respuesta? "El numero es Perfecto" : "El numero no es Perfecto";
+    ClaseEntero.showResultado(resp);
+
+}
+
+function factorialNum(){
+    var respuesta = ClaseEntero.factorial();
     ClaseEntero.showResultado(respuesta);
 }
