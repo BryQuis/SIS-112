@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase entero</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 80%;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.suma { background-color: #4CAF50; color: white; }
+        button.resta { background-color: #FF5722; color: white; }
+        button.multiplicacion { background-color: #FFC107; color: white; }
+        button.division { background-color: #2196F3; color: white; }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #333;
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Número Entero</title>
+    <!-- Incluir Bootstrap CSS desde un CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos adicionales opcionales -->
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        .btn-custom {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Operaciones con Número Entero</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Input para número entero -->
+                <div class="form-group">
+                    <label for="numeroInput">Introduce un número entero:</label>
+                    <input type="number" class="form-control" id="numeroInput" placeholder="Número entero" value="0">
+                </div>
+                <!-- Botones para llamar a funciones -->
+                <button class="btn btn-primary btn-custom" onclick="cargarNum()">CARGAR NUM ENTERO</button>
+                <br>
+                <button class="btn btn-secondary btn-custom" onclick="mostrarNum()">MOSTRAR ENTERO</button>
+                <br>
+                
+                <button class="btn btn-success btn-custom" onclick="IncrementarValor()">(+)</button>
+                <button class="btn btn-danger btn-custom" onclick="DecrementarValor()">(-)</button>
+                <br>
+                <button class="btn btn-secondary btn-custom" onclick="esParImparNum()">Es par o impar</button>
+                <br>
+                <button class="btn btn-secondary btn-custom" onclick=" esPositivoNegativoNum()">Positivo o Negativo</button>
+                <br>
+                <button class="btn btn-secondary btn-custom" onclick=" esPerfectoNum()">¿Perfecto?</button>
+                <br>
+                <button class="btn btn-secondary btn-custom" onclick="factorialNum()">Factorial</button>
+                <br>
+                <button class="btn btn-secondary btn-custom" onclick="esPrimoo()">Factorial</button>
+                <br>
+                <h3>RESULTADO</h3>
+                <div id="resultado" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir jQuery y Bootstrap JS desde un CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Incluir el archivo JavaScript -->
+    <script src="entero.js"></script>
+</body>
+</html>

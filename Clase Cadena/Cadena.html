@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Cadenas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4a90e2;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #4a90e2;
+            border-radius: 5px;
+            background-color: #e7f3fe;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Manipulación de Cadenas</h1>
+    
+    <input type="text" id="inputCadena" placeholder="Introduce una cadena" />
+    
+    <button onclick="ejecutar('getCadena')">Obtener Cadena</button>
+    <button onclick="ejecutar('concatenar')">Concatenar</button>
+    <button onclick="ejecutar('invertir')">Invertir</button>
+    <button onclick="ejecutar('esVacia')">¿Es Vacía?</button>
+    <button onclick="ejecutar('contiene')">Contiene Subcadena</button>
+    <button onclick="ejecutar('comienzaCon')">Comienza Con</button>
+    <button onclick="ejecutar('terminaCon')">Termina Con</button>
+    <button onclick="ejecutar('longitud')">Longitud</button>
+    <button onclick="ejecutar('aMayusculas')">A Mayúsculas</button>
+    <button onclick="ejecutar('aMinusculas')">A Minúsculas</button>
+
+    <div id="resultado"></div>
+
+    <!-- Incluir el archivo JavaScript -->
+    <script src="cadenas.js"></script>
+</body>
+</html>
