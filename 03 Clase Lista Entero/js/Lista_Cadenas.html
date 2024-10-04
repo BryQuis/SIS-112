@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Cadenas</title>
+    <style>
+        body {
+            background: url('https://your-background-image-url.com') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: rgba(0, 0, 0, 0.993);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #00FF00; /* Verde */
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #00FF00;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(0,255,0,1) 50%, rgba(0,0,255,1) 100%);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+            z-index: 0;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .btn:hover::before {
+            width: 400%;
+            height: 400%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .btn:hover {
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .lista {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .lista li {
+            padding: 5px;
+            border-bottom: 1px solid #00FF00;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Cadenas</h1>
+        <input type="text" id="cadenaInput" placeholder="Ingresa texto" class="input">
+        <div class="buttons">
+            <button id="agregarBtn" class="btn">Agregar</button>
+            <button id="EliminarBtn" class="btn">Eliminar</button>
+            <button id="BuscarlosDatos" class="btn">Buscar</button>
+            <button id="OrdenarDato" class="btn">Ordenar</button>
+        </div>
+        <ul id="listaCadenas" class="lista"></ul>
+    </div>
+
+    <script>
+        class ListaCadenas {
+            constructor() {
+                this.lista = [];
+            }
+
+            agregar(valor) {
+                this.lista.push(valor);
+            }
+
+            eliminar(valor) {
+                const index = this.lista.indexOf(valor);
+                if (index !== -1) {
+                    this.lista.splice(index, 1);
+                }
+            }
+
+            buscar(valor) {
+                return this.lista.indexOf(valor);
+            }
+
+            ordenar() {
+                this.lista.sort(); // Ordena alfabéticamente
+            }
+        }
+
+        const listaCadenas = new ListaCadenas();
+        const input = document.getElementById('cadenaInput');
+        const agregarBtn = document.getElementById('agregarBtn');
+        const listaCadenasElement = document.getElementById('listaCadenas');
+        const eliminarBtn = document.getElementById('EliminarBtn');
+        const buscarBtn = document.getElementById('BuscarlosDatos');
+        const ordenarBtn = document.getElementById('OrdenarDato');
+
+        agregarBtn.addEventListener('click', () => {
+            const valor = input.value.trim();
+            if (valor) {
+                listaCadenas.agregar(valor);
+                mostrarLista();
+                input.value = '';
+            } else {
+                alert('Por favor, ingresa un texto válido.');
+            }
+        });
+
+        eliminarBtn.addEventListener('click', () => {
+            const valor = input.value.trim();
+            if (valor) {
+                listaCadenas.eliminar(valor);
+                mostrarLista();
+                input.value = '';
+            } else {
+                alert('Por favor, ingresa un texto válido.');
+            }
+        });
+
+        buscarBtn.addEventListener('click', () => {
+            const valor = input.value.trim();
+            if (valor) {
+                const index = listaCadenas.buscar(valor);
+                if (index !== -1) {
+                    alert(`Texto encontrado en la posición: ${index}`);
+                } else {
+                    alert('Texto no encontrado.');
+                }
+                input.value = '';
+            } else {
+                alert('Por favor, ingresa un texto válido.');
+            }
+        });
+
+        ordenarBtn.addEventListener('click', () => {
+            listaCadenas.ordenar();
+            mostrarLista();
+        });
+
+        function mostrarLista() {
+            listaCadenasElement.innerHTML = '';
+            listaCadenas.lista.forEach(cadena => {
+                const li = document.createElement('li');
+                li.textContent = cadena;
+                listaCadenasElement.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
