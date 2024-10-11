@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Enteros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgb(163, 32, 32);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #a36066;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e76a4b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #be2828;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e8e8e8;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Lista de Enteros</h1>
+        <input type="number" id="numeroInput" placeholder="Agregar un número" />
+        <button id="agregarBtn">Agregar</button>
+        <h5>
+        <button id="EliminarBtn">Eliminar</button></h5>
+        <h5>
+        <button id="BuscarLosDatos">Buscar</button></h5>
+        <h5>
+        <button id="OrdenarDato">Ordenar</button></h5>
+        <h2>Lista de Números</h2>
+        <ul id="listaNumeros"></ul>
+    </div>
+    <script>
+        class ListaEnteros {
+            constructor() {
+                this.lista = [];
+            }
+
+            agregar(valor) {
+                this.lista.push(valor);
+            }
+        }
+
+        const listaEnteros = new ListaEnteros();
+        const input = document.getElementById('numeroInput');
+        const agregarBtn = document.getElementById('agregarBtn');
+        const listaNumeros = document.getElementById('listaNumeros');
+        const eliminarBtn = document.getElementById('EliminarBtn');
+        const BuscarUnDato = document.getElementById('BuscarlosDatos');
+        const OrdenarDato = document.getElementById('OrdenarDato');
+
+        agregarBtn.addEventListener('click', () => {
+            const valor = parseInt(input.value);
+            if (!isNaN(valor)) {
+                listaEnteros.agregar(valor);
+                mostrarLista();
+                input.value = '';
+            } else {
+                alert('Por favor, ingresa un número válido.');
+            }
+        });
+
+        function mostrarLista() {
+            listaNumeros.innerHTML = '';
+            listaEnteros.lista.forEach(num => {
+                const li = document.createElement('li');
+                li.textContent = num;
+                listaNumeros.appendChild(li);
+            });
+        }
+    </script>
+    <script src="lista-enteros.js"></script>
+</body>
+</html>

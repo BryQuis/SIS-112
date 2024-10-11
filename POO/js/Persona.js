@@ -50,5 +50,8 @@ class Persona {
     carrera.textContent = persona.Universidad();
   }
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> ab5b45d56f98a577b2f9cb23ebe06227bffc527d
