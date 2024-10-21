@@ -1,10 +1,10 @@
-class tank {
+class EnemyTank {
     posX;
     posY;
     direccion_disparo;
     vidas;
 
-    constructor(_posX, _posY, _direccion_disparo, _vidas){
+    constructor(_posX, _posY, _direccion_disparo, _vida){
         this.posX = _posX;
         this.posY = _posY;
         this.direccion_disparo = _direccion_disparo;
