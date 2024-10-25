@@ -1,3 +1,4 @@
+// Clase de la intefaz del juego
 class Game {
     ancho;
     alto;

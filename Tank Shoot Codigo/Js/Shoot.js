@@ -1,3 +1,4 @@
+// Clase para los disparos de los tanques
 class Shoot{
     posX;
     posY;

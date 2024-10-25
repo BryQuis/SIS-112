@@ -1,3 +1,4 @@
+//Clase para la puntuacion del videojuego
 class GameManager{
     puntuacion;
     nivel_actual;

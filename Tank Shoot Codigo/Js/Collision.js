@@ -1,3 +1,4 @@
+//Clase que va a aparecer cuando se chocan / impactan las balas
 class Collision{
     posX;
     posY;
@@ -8,6 +9,7 @@ class Collision{
             this.posY = _posY;
             this.duracion = _duracion;
         }
+
 
     play_animation(){
         

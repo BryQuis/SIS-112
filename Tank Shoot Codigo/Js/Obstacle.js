@@ -1,3 +1,4 @@
+//Clase para los obstaculos del juego
 class Obstacle{
     nombre ;
     tipo;
