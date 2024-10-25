@@ -37,6 +37,39 @@ function drawEnemyTank(enemyTank){
 
 }
 
+window.addEventListener("keydown", function (e){
+    switch(e.key){
+        case "ArrowLeft":
+            playerTank.move_left();
+            break;
+        case "ArrowRight":
+            playerTank.move_right();
+            break;
+        case "ArrowUp":
+            playerTank.move_up();
+            break;
+        case "ArrowDown":
+            playerTank.move_down();
+            break;
+        default:
+            break;
+        //Ahora las letras del teclado
+        case "a":
+            playerTank.rotar_tank("left");
+            break;
+        case "d":
+            playerTank.rotar_tank("right");
+            break;
+        case "w":
+            playerTank.rotar_tank("up");
+            break;
+        case "s":
+            playerTank.rotar_tank("down");
+            break;
+    }
+
+})
+
 //Logica del juego (actualizamos la pantalla)
 function updateGame (){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -47,21 +80,7 @@ function updateGame (){
     requestAnimationFrame(updateGame);
 }
 
- //Manejamos las teclas para mover el tanque del jugador
- document.addEventListener('keydown', function(event){
-    if(event.key === "ArrowUp"){
-        playerTank.move("up");
-    }
-    if(event.key === "ArrowDown"){
-        playerTank.move("down");
-    }
-    if(event.key === "ArrowLeft"){
-        playerTank.move("left");
-    }
-    if(event.key === "ArrowRight"){
-        playerTank.move("right");
-    }
-});
+
 
 //Iniciamos el juego
  updateGame();
