@@ -49,4 +49,11 @@ class EnemyTank {
         
     }
 
+    drawEnemyTank(ctx){
+        ctx.fillStyle = "pink";
+        //representamos el tanque enemigo como un cuadrado
+        ctx.fillRect(this.posX, this.posY, 10, 10);
+    
+    }
+
 }

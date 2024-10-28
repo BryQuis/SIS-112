@@ -1,21 +1,43 @@
-// Clase de la intefaz del juego
-class Game {
+//Todo lo basico que tiene el juego
+class Game{
     ancho;
     alto;
-    estado_Juego;
+    cantColumnas; // valores calculados a partir de la "ancho"
+    cantFilas; //Valores calculados a partir de la "alto"
+    altoCelda;
+    anchoCelda;
 
-    constructor(_ancho, _alto, _estado_Juego) {
-        this.ancho = _ancho;
-        this.alto = _alto;
-        this.estado_Juego = _estado_Juego;
+    estadoJuego;
+
+    constructor(_ancho,_alto,_estadoJuego){
+        this.ancho = _ancho; //valor del ancho ???
+        this.alto = _alto; //valor del alto ???
+        this.estadoJuego = _estadoJuego;
+
+
+        var utilsObj = new Utils();
+        this.cantColumnas = CANT_COLUMNAS;
+        this.cantFilas = CANT_FILAS;
+        this.anchoCelda = utilsObj.Redondear(this.ancho/this.cantColumnas);
+        this.altoCelda = utilsObj.Redondear(this.alto/this.cantFilas);
+
+        console.log("cantColumnas", this.cantColumnas);
+        console.log("cantFilas", this.cantFilas);
+        console.log("anchoCelda", this.anchoCelda);
+        console.log("altoCelda", this.altoCelda);
+
     }
 
-    start (){
-
+    start(){
+        this.estadoJuego = "playing";
+        //iniciar otros elementos como tanques, puntuacion, etc.
     }
-
-    reset (){
-
-
+ 
+    reset(){
+        this.estadoJuego = "reset";
+        //reiniciar las puntuaciones de los tanques, puntuaciones,etc.
+        
     }
+   
+
 }

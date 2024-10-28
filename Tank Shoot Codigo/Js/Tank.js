@@ -1,5 +1,5 @@
 // Clase del tanque 
-class Tank {
+class tank {
     posX;
     posY;
     direccion_disparo;
@@ -48,5 +48,13 @@ class Tank {
         this.direccion_disparo = _direccion_disparo;
         
     }
+
+    //Dibujamos los elementos en el canvas
+    drawTank(ctx){
+    ctx.fillStyle = "green";  // Aqui se modifica el color de los tanques
+    //representamos el tanque como un cuadrado
+    ctx.fillRect(this.posX, this.posY, 50, 50);  //Aqui se modifica el tamaño de los tanques
+
+}
 
 }

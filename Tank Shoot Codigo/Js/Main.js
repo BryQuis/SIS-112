@@ -2,6 +2,7 @@
 //seleccionamos el canvas y el contexto
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext("2d");
+var utilsObj = new Utils();
 
 //funcion para ajustar el tamaño del cmavas a la ventana
 function resizeCanvas(){
@@ -9,11 +10,12 @@ function resizeCanvas(){
     canvas.width = window.innerWidth * 0.9 ;
     canvas.height = window.innerHeight * 0.9;
     //Operacion para que el canvas se ajuste a cualquier pantalla y sea multiplo de 50
-    canvas.width = Math.round(canvas.width/ 50) * 50
-    canvas.height = Math.round(canvas.height/ 50) * 50
+    
+    canvas.width = utilsObj.RoundTablero(canvas.width);
+    canvas.heigth = utilsObj.RoundTablero(canvas.heigth);
     //Funcion para mostrar los tamaños del canvas
-    //console.log("width", canvas.width)
-    //console.log("height", canvas.height)
+    console.log("width", canvas.width)
+    console.log("height", canvas.height)
 
 }
 
@@ -35,19 +37,8 @@ const enemyTank4 = new EnemyTank (900, 500, "down", 3, game.ancho, game.alto);
 const enemyTank5 = new EnemyTank (100, 500, "down", 3, game.ancho, game.alto);
 const enemyTank6 = new EnemyTank (400, 500, "down", 3, game.ancho, game.alto);
 
-//Dibujamos los elementos en el canvas
-function drawTank(tank){
-    ctx.fillStyle = "green";  // Aqui se modifica el color de los tanques
-    //representamos el tanque como un cuadrado
-    ctx.fillRect(tank.posX, tank.posY, 50, 50);  //Aqui se modifica el tamaño de los tanques
 
-}
-function drawEnemyTank(enemyTank){
-    ctx.fillStyle = "pink";
-    //representamos el tanque enemigo como un cuadrado
-    ctx.fillRect(enemyTank.posX, enemyTank.posY, 10, 10);
 
-}
 //Función para activar las teclas del teclado y mover al tanque con estas
 window.addEventListener("keydown", function (e){
     //Mover las flechitas
@@ -117,20 +108,73 @@ setInterval(() =>{
     moveEnemyTankRandom(enemyTank4);
     moveEnemyTankRandom(enemyTank5);
     moveEnemyTankRandom(enemyTank6); 
-}, 100)
+}, 2000)
+
+
+const escenario = [
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+    [1, 2, 1, 2, 1, 2, 2, 1, 1, 0, 0, 0, 1, ],
+
+
+];
+
+const cellsize = 50 // Tamaño de la celda en pixeles
+
+function drawEscenario(ctx, escenario) {
+    for (let row = 0; row < escenario.length; row ++) {
+        for (let col = 0; col < escenario[row].length; col ++){
+            const cell = escenario [row][col];
+            const x = col * game.anchoCelda;
+            const y = row * game.altoCelda;
+
+            switch(cell) {
+                case 0: //espacio vacio
+                    ctx.fillStyle = "black";
+                    ctx.fillRect(x, y, game.anchoCelda, game.altoCelda);
+                    break;
+                case 1: //pared
+                    ctx.fillStyle = "gray";
+                   ctx.fillRect(x, y, game.anchoCelda, game.altoCelda);
+                   //var wall = new Image();
+                   //wall.src = "./assets/pared.webp";
+                   //ctx.drawImage(wall, x, y, cellSize, cellSize);
+                   break;
+                default:
+                    break;
+
+            }
+        }
+    }
+}
 
 
 //Logica del juego (actualizamos la pantalla)
 function updateGame (){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawTank(playerTank); //Dibujamos el tanque del jugador
-    drawEnemyTank(enemyTank);
-    drawEnemyTank(enemyTank2);
-    drawEnemyTank(enemyTank3);
-    drawEnemyTank(enemyTank4);
-    drawEnemyTank(enemyTank5);
-    drawEnemyTank(enemyTank6); //Dibujamos el tanque del enemigo
 
+    drawEscenario(ctx,escenario);
+    playerTank.drawTank(ctx); //Dibujamos el tanque del jugador
+    enemyTank.drawEnemyTank(ctx);
+    enemyTank2.drawEnemyTank(ctx); 
+    enemyTank3.drawEnemyTank(ctx); 
+    enemyTank4.drawEnemyTank(ctx); 
+    enemyTank5.drawEnemyTank(ctx); 
+    enemyTank6.drawEnemyTank(ctx); 
+
+    
     //Refrescar los graficos
     requestAnimationFrame(updateGame);
 }
