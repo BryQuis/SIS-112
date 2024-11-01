@@ -7,7 +7,7 @@ var utilsObj = new Utils();
 //funcion para ajustar el tamaño del cmavas a la ventana
 function resizeCanvas(){
     
-    canvas.width = window.innerWidth * 0.9 ;
+    canvas.width = window.innerHeight * 0.9 ;
     canvas.height = window.innerHeight * 0.9;
     //Operacion para que el canvas se ajuste a cualquier pantalla y sea multiplo de 50
     
@@ -162,38 +162,38 @@ function drawEscenario(ctx, escenario) {
 
 
 const mapa = [
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 2, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 2, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [0, 1, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1],
+    [0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1],
+    [0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0, 2, 1, 1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0],
 
     
 ]
 
 
 function DibujarCero (ctx, x, y, x1, y1){
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "black";
     ctx.fillRect(x, y, x1, y1);
 }
 
 function DibujarUno (ctx, x, y, x1, y1){
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "brown";
     ctx.fillRect(x, y, x1, y1);
 }
 
 function DibujarDos (ctx, x, y, x1, y1){
-    ctx.fillStyle = "#8aded5";
+    ctx.fillStyle = "grey";
     ctx.fillRect(x, y, x1, y1);
 }
 
