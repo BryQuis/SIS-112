@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="matrices.css">
+
+    
+</head>
+<body>
+    <div class="main-container">
+        <canvas id="matricesCanvas" width="500" height="500"></canvas>
+        <div class="background"></div>
+        <div class="button-container">
+            <button onclick="matriz.llenarTodasLasCasillas()">Todas las casillas</button>
+            <button onclick="matriz.llenarMarcoInterno()">Llenar Marco Interno</button>
+            <button onclick="matriz.llenarConCruces()">Llenar con Cruces</button>
+            <button onclick="matriz.llenarConBordesyDiagonales()">Bordes y Diagonales</button>
+            <button onclick="matriz.llenarConBandera()">Bandera</button>
+            <button onclick="matriz.llenarAlternamente()">Secuencia alterna</button>
+            <button onclick="matriz.llenarZigZag()">Zig Zag</button>
+            <button onclick="matriz.llenarEnEspiral()">Espiral(No supe)</button>
+            <button onclick="matriz.llenarConTrianguloInferiorIzquierdo()">Triangulo Inferior Izquierdo</button>
+            <button onclick="matriz.llenarConTrianguloInferiorDerecho()">Triangulo Inferior Derecho</button>
+            <button onclick="matriz.llenarConCuadricula()">Cuadricula</button>
+        </div>
+        <div class="button-container">
+            <button onclick="matriz.llenarTrianguloCentral()">Triangulo Central</button>
+            <button onclick="matriz.llenarConRombosConcentricos()">Rombos Concentricos (No supe)</button>
+            <button onclick="matriz.llenarConCrucesConcentricas()">Cruces Concentricas (No supe)</button>
+            <button onclick="matriz.llenarConBanderaDiagonal()">Bandera Diagonal</button>
+            <button onclick="matriz.llenarCuadradoalCuadrado()">Cuadrado al Cuadrado</button>
+            <button onclick="matriz.llenarBordesyCentro()">Bordes y Centro</button>
+            <button onclick="matriz.llenarConLineasParalelas()">Lineas Paralelas </button>
+            <button onclick="matriz.llenarConDiagonalesCiclicas()">Marcas de Cruz</button>
+            <button onclick="matriz.llenarConRombosEnLasEsquinas()">Rombos en las Esquinas (No supe)</button>
+            <button onclick="matriz.rellenoDeAjedrez()">Ajedrez</button>
+            <button onclick="matriz.llenarRelojDeArena()">Reloj de Arena</button>
+
+        </div>
+    </div>
+    
+    <!-- Scripts de JavaScript -->
+    <script src="matrices.js"></script>
+    <script src="maaiin.js"></script>
+</body>
+</html>
