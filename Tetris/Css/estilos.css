@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+* {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #111221, #1A1A1A);
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background-color: #181929;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.canvas {
+    background-color: rgb(0, 0, 0);
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.canvas-container span,
+.menu span {
+    color: white;
+    font-size: 25px;
+}
+
+.canvas-container .score-container,
+#score {
+    font-size: 20px;
+}
+
+.menu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    border: 10px solid #FFD700;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 30px;
+}
+
+.menu button {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #FFD700;
+    color: #222;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.menu button:hover {
+    background-color: #FFA500;
+}
+
+.canvas-container span {
+    color: #FFD700;
+}
+
+#canvas-tetris {
+    background-color: #000000;
+    border: 2px solid #FFD700;
+}
+
+#canvas-next,
+#canvas-hold {
+    background-color: #222;
+    border: 2px solid #FFD700;
+}
+
+.canvas-container span {
+    color: #FFD700;
+}
